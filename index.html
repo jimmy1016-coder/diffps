@@ -103,7 +103,11 @@
 
   <div class="section">
     <h2>Abstract</h2>
-    <p>Person search aims to jointly perform person detection and person re-identification (re-ID) in a unified framework. Existing methods often suffer from optimization conflicts due to shared backbone usage. We propose <strong>DiffPS</strong>, which leverages pretrained diffusion models to extract rich visual features, freezes the backbone, and uses decoupled task-specific branches to fully exploit diffusion priors. This results in improved performance and stability across multiple person search benchmarks.</p>
+    <p>Person search aims to jointly perform person detection and re-identification by localizing and identifying a query person within a gallery of uncropped scene images.</p> 
+      <p>Existing methods predominantly utilize <b>ImageNet pre-trained backbones</b>, which may be less effective at capturing the contextual and fine-grained features crucial for person search.</p>
+      <p>Moreover, they rely on a <b>shared backbone feature</b> for both person detection and re-identification, leading to suboptimal features due to conflicting optimization objectives.</p>
+      <p>Recently, diffusion models have emerged as powerful vision backbones, capturing rich visual priors from largescale datasets. </p>
+    <p>We propose <p>DiffPS</p>(Diffusion Prior Knowledge for Person Search), a novel framework that leverages a pre-trained diffusion model while eliminating the optimization conflict between two sub-tasks.</p>
   </div>
 
   <div class="section">
