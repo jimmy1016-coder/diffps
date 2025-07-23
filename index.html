@@ -7,14 +7,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
       line-height: 1.6;
-      margin: 0;
-      padding: 2em;
       background-color: #f5f5f5;
       color: #333;
     }
     h1, h2, h3 {
       color: #222;
+      text-align: center;
     }
     a {
       color: #1a73e8;
@@ -24,29 +26,58 @@
       text-decoration: underline;
     }
     .author-block {
+      text-align: center;
       margin-bottom: 1em;
+    }
+    .code-links {
+      text-align: center;
+      margin: 1.5em 0;
+    }
+    .code-links a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
     }
     .figure {
       text-align: center;
       margin: 2em 0;
+    }
+    .figure img {
+      max-width: 1000px;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
     }
     .bibtex {
       background: #eee;
       padding: 1em;
       font-family: monospace;
       white-space: pre-wrap;
-    }
-    .code-links a {
-      margin-right: 1em;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     table {
       border-collapse: collapse;
       width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     table, th, td {
       border: 1px solid #ccc;
       padding: 8px;
       text-align: center;
+    }
+    .section {
+      margin: 60px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+    .section p {
+      text-align: justify;
     }
   </style>
 </head>
@@ -66,52 +97,61 @@
   </div>
 
   <div class="figure">
-    <img src="figures/teaser.png" alt="Teaser Figure" width="80%">
+    <img src="figures/teaser.png" alt="Teaser Figure">
     <p><em>Teaser: PCA comparison and architecture concept of DiffPS</em></p>
   </div>
 
-  <h2>Abstract</h2>
-  <p>Person search aims to jointly perform person detection and person re-identification (re-ID) in a unified framework. Existing methods often suffer from optimization conflicts due to shared backbone usage. We propose <strong>DiffPS</strong>, which leverages pretrained diffusion models to extract rich visual features, freezes the backbone, and uses decoupled task-specific branches to fully exploit diffusion priors. This results in improved performance and stability across multiple person search benchmarks.</p>
+  <div class="section">
+    <h2>Abstract</h2>
+    <p>Person search aims to jointly perform person detection and person re-identification (re-ID) in a unified framework. Existing methods often suffer from optimization conflicts due to shared backbone usage. We propose <strong>DiffPS</strong>, which leverages pretrained diffusion models to extract rich visual features, freezes the backbone, and uses decoupled task-specific branches to fully exploit diffusion priors. This results in improved performance and stability across multiple person search benchmarks.</p>
+  </div>
 
-  <h2>Method</h2>
-  <p>
-    DiffPS uses a frozen diffusion model backbone to provide rich spatial features, and separates task-specific heads for detection and Re-ID to avoid gradient interference. This decoupled design ensures stability and better representation learning.
-  </p>
+  <div class="section">
+    <h2>Method</h2>
+    <p>DiffPS uses a frozen diffusion model backbone to provide rich spatial features, and separates task-specific heads for detection and Re-ID to avoid gradient interference. This decoupled design ensures stability and better representation learning.</p>
+  </div>
+
   <div class="figure">
-    <img src="figures/architecture.png" alt="Architecture Diagram" width="80%">
+    <img src="figures/architecture.png" alt="Architecture Diagram">
     <p><em>DiffPS Architecture</em></p>
   </div>
 
-  <h2>Results</h2>
-  <table>
-    <tr>
-      <th>Dataset</th>
-      <th>mAP (%)</th>
-      <th>Top-1 (%)</th>
-    </tr>
-    <tr>
-      <td>CUHK-SYSU</td>
-      <td>94.1</td>
-      <td>94.7</td>
-    </tr>
-    <tr>
-      <td>PRW</td>
-      <td>48.0</td>
-      <td>87.2</td>
-    </tr>
-  </table>
+  <div class="section">
+    <h2>Results</h2>
+    <table>
+      <tr>
+        <th>Dataset</th>
+        <th>mAP (%)</th>
+        <th>Top-1 (%)</th>
+      </tr>
+      <tr>
+        <td>CUHK-SYSU</td>
+        <td>94.1</td>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <td>PRW</td>
+        <td>48.0</td>
+        <td>87.2</td>
+      </tr>
+    </table>
+  </div>
 
-  <h2>BibTeX</h2>
-  <div class="bibtex">
+  <div class="section">
+    <h2>BibTeX</h2>
+    <div class="bibtex">
 @inproceedings{kim2025diffps,<br>
   title={Leveraging Prior Knowledge of Diffusion Model for Person Search},<br>
   author={Kim, Giyeol and Yang, Sooyoung and Oh, Jihyong and Kang, Myungjoo and Eom, Chanho},<br>
   booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},<br>
   year={2025}<br>
 }
+    </div>
   </div>
 
-  <h2>Contact</h2>
-  <p>Email: perceptualai.lab [at] gmail.com</p>
+  <div class="section">
+    <h2>Contact</h2>
+    <p style="text-align: center;">Email: perceptualai.lab [at] gmail.com</p>
+  </div>
 </body>
 </html>
