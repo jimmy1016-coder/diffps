@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiffPS: Diffusion for Person Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2em;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .author-block {
+      margin-bottom: 1em;
+    }
+    .figure {
+      text-align: center;
+      margin: 2em 0;
+    }
+    .bibtex {
+      background: #eee;
+      padding: 1em;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .code-links a {
+      margin-right: 1em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>DiffPS: Leveraging Prior Knowledge of Diffusion Model for Person Search</h1>
+
+  <div class="author-block">
+    <p><strong>Giyeol Kim*</strong>, <strong>Sooyoung Yang*</strong>, <strong>Jihyong Oh</strong>, <strong>Myungjoo Kang</strong>, <strong>Chanho Eom</strong><br>
+    <em>1</em> Chung-Ang University, <em>2</em> IPAI, Seoul National University<br>
+    *Equal contribution</p>
+  </div>
+
+  <div class="code-links">
+    <a href="https://github.com/PerceptualAI-Lab/DiffPS">Code</a>
+    <a href="#">Paper</a>
+    <a href="#">Demo</a>
+  </div>
+
+  <div class="figure">
+    <img src="figures/teaser.png" alt="Teaser Figure" width="80%">
+    <p><em>Teaser: PCA comparison and architecture concept of DiffPS</em></p>
+  </div>
+
+  <h2>Abstract</h2>
+  <p>Person search aims to jointly perform person detection and person re-identification (re-ID) in a unified framework. Existing methods often suffer from optimization conflicts due to shared backbone usage. We propose <strong>DiffPS</strong>, which leverages pretrained diffusion models to extract rich visual features, freezes the backbone, and uses decoupled task-specific branches to fully exploit diffusion priors. This results in improved performance and stability across multiple person search benchmarks.</p>
+
+  <h2>Method</h2>
+  <p>
+    DiffPS uses a frozen diffusion model backbone to provide rich spatial features, and separates task-specific heads for detection and Re-ID to avoid gradient interference. This decoupled design ensures stability and better representation learning.
+  </p>
+  <div class="figure">
+    <img src="figures/architecture.png" alt="Architecture Diagram" width="80%">
+    <p><em>DiffPS Architecture</em></p>
+  </div>
+
+  <h2>Results</h2>
+  <table>
+    <tr>
+      <th>Dataset</th>
+      <th>mAP (%)</th>
+      <th>Top-1 (%)</th>
+    </tr>
+    <tr>
+      <td>CUHK-SYSU</td>
+      <td>94.1</td>
+      <td>94.7</td>
+    </tr>
+    <tr>
+      <td>PRW</td>
+      <td>48.0</td>
+      <td>87.2</td>
+    </tr>
+  </table>
+
+  <h2>BibTeX</h2>
+  <div class="bibtex">
+@inproceedings{kim2025diffps,<br>
+  title={Leveraging Prior Knowledge of Diffusion Model for Person Search},<br>
+  author={Kim, Giyeol and Yang, Sooyoung and Oh, Jihyong and Kang, Myungjoo and Eom, Chanho},<br>
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},<br>
+  year={2025}<br>
+}
+  </div>
+
+  <h2>Contact</h2>
+  <p>Email: perceptualai.lab [at] gmail.com</p>
+</body>
+</html>
